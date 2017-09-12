@@ -1,4 +1,4 @@
-package main
+package API_v1
 
 import (
 	"net/http"
@@ -6,8 +6,12 @@ import (
 )
 
 // A completely separate router for api routes
-func adminRouter() http.Handler {
+func ApiRouter() http.Handler {
 	r := chi.NewRouter()
+
+	r.Get("/", func (w http.ResponseWriter, r *http.Request){
+		w.Write([]byte("help is here"))
+	})
 
 	return  r
 }
