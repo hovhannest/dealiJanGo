@@ -9,7 +9,7 @@ import (
 func ApiRouter() http.Handler {
 	r := chi.NewRouter()
 
-	r.Get("/", func (w http.ResponseWriter, r *http.Request){
+	r.Get("/*", func (w http.ResponseWriter, r *http.Request){
 		w.Write([]byte("help is here"))
 	})
 
